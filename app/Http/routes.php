@@ -17,13 +17,12 @@ Route::get('/', function () {
 
 class JeepWrangler
 {
-    public function __construct(Petrol $fuel)
-    {
-        $this->fuel = $fuel;
-    }
 
     public function refuel($litres)
     {
+        $petrol = new Petrol;
+
+
         return $litres * $this->fuel->getPrice();
     }
 }
@@ -36,7 +35,6 @@ class Petrol
     }
 }
 
-$petrol = new Petrol;
 $car = new JeepWrangler($petrol);
 
 $cost = $car->refuel(60);
