@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-interface Combustible {
+interface Fuel {
     public function getPrice();
 }
 
@@ -32,7 +32,7 @@ class JeepWrangler
     }
 }
 
-class Petrol implements fuel
+class Petrol implements Fuel
 {
     public function getPrice()
     {
@@ -40,10 +40,12 @@ class Petrol implements fuel
     }
 }
 
-$petrol = new fuel;
+$petrol = new Petrol;
 $car = new JeepWrangler($petrol);
 
 $cost = $car->refuel(60);
+
+dd($this->app);
 
 /*
 |--------------------------------------------------------------------------
