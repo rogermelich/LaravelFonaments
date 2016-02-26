@@ -15,13 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-interface Fuel {
-    public function getPrice();
-}
+//interface Fuel {
+//    public function getPrice();
+//}
 
 class JeepWrangler
 {
-    public function __construct(Fuel $fuel)
+    public function __construct(Petrol $fuel)
     {
         $this->fuel = $fuel;
     }
@@ -32,7 +32,7 @@ class JeepWrangler
     }
 }
 
-class Petrol implements Fuel
+class Petrol
 {
     public function getPrice()
     {
@@ -40,12 +40,12 @@ class Petrol implements Fuel
     }
 }
 
-$petrol = new Petrol;
-$car = new JeepWrangler($petrol);
+//$petrol = new Petrol;
+//$car = new JeepWrangler($petrol);
+$car = $this->app->make('JeepWrangler');
+echo $cost = $car->refuel(60);
 
-$cost = $car->refuel(60);
-
-dd($this->app);
+//dd($this->app);
 
 /*
 |--------------------------------------------------------------------------
