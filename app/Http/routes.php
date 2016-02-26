@@ -15,26 +15,32 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+interface Combustible {
+    public function getPrice();
+}
+
 class JeepWrangler
 {
+    public function __construct(Combustible $fuel)
+    {
+        $this->fuel = $fuel;
+    }
 
     public function refuel($litres)
     {
-        $petrol = new Petrol;
-
-
         return $litres * $this->fuel->getPrice();
     }
 }
 
-class Petrol
+class Gasolina
 {
     public function getPrice()
     {
-        return 130.7;
+        return 150;
     }
 }
 
+$gasoil = new Gasolina;
 $car = new JeepWrangler($petrol);
 
 $cost = $car->refuel(60);
