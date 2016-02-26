@@ -15,45 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-interface Fuel {
-    public function getPrice();
-}
-
-class JeepWrangler
-{
-    public function __construct(Fuel $fuel)
-    {
-        $this->fuel = $fuel;
-    }
-
-    public function refuel($litres)
-    {
-        return $litres * $this->fuel->getPrice();
-    }
-}
-
-class Petrol implements Fuel
-{
-    public function getPrice()
-    {
-        return 120;
-    }
-}
-
-class Gasolina implements Fuel
-{
-    public function getPrice()
-    {
-        return 20;
-    }
-}
-
 
 //$petrol = new Petrol;
 //$car = new JeepWrangler($petrol);
-$car = $this->app->make('Fuel','Petrol');
-$car = $this->app->make('JeepWrangler');
-$car = $this-refuel(60);
+//$car = $this->app->make('Fuel','Petrol');
+//$car = $this->app->make('JeepWrangler');
+//$car = $this-refuel(60);
+
+$car = $this->app->bind('\App\Veicle\Fuel','\App\Veicle\Gasolina');
+$car = $this->app->make('\App\Veicle\Jeep');
+$car = $this->refuel(60);
 
 echo $cost;
 
