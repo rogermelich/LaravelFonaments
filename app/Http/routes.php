@@ -22,8 +22,7 @@ Route::get('/', function () {
 //$car = $this->app->make('JeepWrangler');
 //$car = $this-refuel(60);
 
-$car = $this->app->bind('\App\Veicle\Fuel','\App\Veicle\Gasolina');
-$car = $this->app->make('\App\Veicle\Jeep');
+$car = $this->app->make('\App\Vehicle\Jeep');
 $car = $this->refuel(60);
 
 echo $cost;

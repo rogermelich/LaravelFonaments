@@ -215,6 +215,7 @@ return [
 
         #Agregate Provider
         App\Providers\MenuServiceProvider::class,
+        App\Providers\VehiclesServiceProvider::class,
 
     ],
 

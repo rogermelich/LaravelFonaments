@@ -1,5 +1,5 @@
 <?php
-namespace App\Veicle;
+namespace App\Vehicle;
     interface Fuel {
     public function getPrice();
 

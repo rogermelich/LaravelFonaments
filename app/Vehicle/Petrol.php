@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Veicle;
+namespace App\Vehicle;
 /**
  * Created by PhpStorm.
  * User: roger
