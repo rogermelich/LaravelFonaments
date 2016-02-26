@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Route;
 
 class MenuServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,9 @@ class MenuServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        echo "asasasasas";
+        Route::get('/menu', funcion() {
+            return view('menu');
+        });
     }
 }

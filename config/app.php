@@ -213,6 +213,9 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         #llum_aliases
 
+        #Agregate Provider
+        App\Providers\MenuServiceProvider::class,
+
     ],
 
 ];
