@@ -21,7 +21,7 @@ interface Combustible {
 
 class JeepWrangler
 {
-    public function __construct(Combustible $fuel)
+    public function __construct(Fuel $fuel)
     {
         $this->fuel = $fuel;
     }
@@ -32,7 +32,7 @@ class JeepWrangler
     }
 }
 
-class Gasolina
+class Petrol implements fuel
 {
     public function getPrice()
     {
@@ -40,7 +40,7 @@ class Gasolina
     }
 }
 
-$gasoil = new Gasolina;
+$petrol = new fuel;
 $car = new JeepWrangler($petrol);
 
 $cost = $car->refuel(60);
